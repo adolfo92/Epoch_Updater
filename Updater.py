@@ -70,14 +70,16 @@ else:
 # Start Updater
 for url in links:
 
+    Dpath = "./Downloaded_Files"
+
     filename = url.split('=')[-1]
 
-    if os.path.exists(filename): # Delete existing name matching files
-        os.remove(filename)
+    if os.path.exists(f"{Dpath}/{filename}"): # Delete existing name matching files
+        os.remove(f"{Dpath}/{filename}")
 
     print("\nDownloading: " + filename)
 	
-    wget.download(url,filename)
+    wget.download(url,f"{Dpath}/{filename}")
 
     print ("\nDone\n")
 
