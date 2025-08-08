@@ -68,9 +68,11 @@ else:
 
 
 # Start Updater
-for url in links:
+Dpath = "./Downloaded_Files"
+if not os.path.exists(Dpath):
+    os.mkdir(Dpath)
 
-    Dpath = "./Downloaded_Files"
+for url in links:
 
     filename = url.split('=')[-1]
 
